@@ -18,16 +18,15 @@ This project is a **Flask-based intelligent assistant** that integrates **Google
 
 ## ✨ Features
 
-✅ Create calendar events using natural language
-✅ Reschedule events by interpreting your intent
-✅ Delete events with specified attendees or time ranges
-✅ List upcoming events this month
-✅ Query your calendar ("Who am I meeting today?", "How many meetings this week?")
-✅ Timezone-aware scheduling using your Google Calendar's timezone
-✅ Auto-maps attendees to email addresses from local contacts DB
-✅ Uses Google Gemini (Flash model) for prompt interpretation
+- ✅ Create calendar events using natural language  
+- ✅ Reschedule events by interpreting your intent  
+- ✅ Delete events with specified attendees or time ranges  
+- ✅ List upcoming events this month  
+- ✅ Query your calendar ("Who am I meeting today?", "How many meetings this week?")  
+- ✅ Timezone-aware scheduling using your Google Calendar's timezone  
+- ✅ Auto-maps attendees to email addresses from local contacts DB  
+- ✅ Uses Google Gemini (Flash model) for prompt interpretation  
 
----
 
 ## 🧠 How It Works
 
@@ -173,6 +172,3 @@ The assistant uses a structured prompt with system guidelines to ensure Gemini r
 Made with ❤️ by **Nandini Mundra**
 For suggestions, improvements, or demos — reach out anytime.
 
----
-
-Would you like me to auto-generate the `requirements.txt` for this as well?

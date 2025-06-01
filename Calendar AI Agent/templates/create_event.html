@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Google Calendar Event</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #1e2633;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+    }
+
+    .container {
+      text-align: center;
+      background: #2a3142;
+      padding: 40px 60px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      width: 80%;
+      max-width: 600px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      resize: vertical;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 15px;
+      background-color: #4285F4;
+      color: white;
+      font-size: 16px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #357ae8;
+    }
+
+    p {
+      margin-top: 20px;
+      color: #90ee90;
+    }
+    .flash-message a {
+      color: white;
+      text-decoration: underline; /* optional */
+    }
+
+    .flash-message a:hover {
+      color: #ccc; /* optional: on hover */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Please Enter Your Input</h2>
+    <form method="POST" action="/handle_prompt">
+      <textarea name="prompt" rows="4" placeholder="e.g., Meeting with Juhi Sahu tomorrow at 3pm"></textarea><br>
+      <button type="submit">Submit</button>
+    </form>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <div class="flash-message">
+            {{ message|safe }}
+          </div>
+          <form method="GET" action="/handle_prompt">
+            <button type="submit" class="back-button">Back to Input</button>
+          </form>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <!-- {% if message %}
+      <p>{{ message }}</p>
+    {% endif %} -->
+  </div>
+</body>
+</html>
